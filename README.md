@@ -11,3 +11,5 @@ Sales data imported from Excel with common data quality issues:
 ## Common Issues
 - Excel UTF-8 BOM encoding may introduce hidden characters in column names.
 - Solution: re-import file using UTF-8 without BOM or normalize column names in SQL.
+- MySQL Safe Update Mode may block UPDATE statements without a WHERE clause.
+  Solution: disable Safe Update Mode for the session when running the pipeline.
