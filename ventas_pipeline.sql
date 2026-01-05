@@ -84,6 +84,13 @@ WHERE fila_rank = 1;
    PASO 3: Normalización de campos vacíos a NULL
    ========================================================= */
 
+/*
+   Nota:
+   Este UPDATE requiere que Safe Update Mode esté deshabilitado
+   (SET SQL_SAFE_UPDATES = 0), ya que no utiliza cláusula WHERE.
+*/
+
+
 UPDATE ventas_operativas_final
 SET
     cliente = NULLIF(TRIM(cliente), ''),
